@@ -15,9 +15,9 @@
 
     body {
       margin: 0;
-      font-family: "Georgia", "Times New Roman", serif;
+      font-family: Georgia, "Times New Roman", serif;
       color: var(--gs-text);
-      background: #fff;
+      background: #ffffff;
     }
 
     .container {
@@ -41,6 +41,11 @@
       margin-left: 24px;
       text-decoration: none;
       color: var(--gs-muted);
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--gs-text);
     }
 
     nav a.active {
@@ -53,6 +58,7 @@
       width: 100%;
       max-height: 320px;
       object-fit: cover;
+      display: block;
       margin-bottom: 40px;
     }
 
@@ -73,18 +79,19 @@
   <div class="container">
     <strong>Maria Sole Pagliari</strong>
     <nav>
-      index.htmlHome</a>
-      cv.htmlCurriculum Vitae</a>
-      research.htmlResearch</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="cv.html">Curriculum Vitae</a>
+      <a href="research.html">Research</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
-  ba412a5c29ed39730a1b7396227d09e6.jpg
+  <img src="ba412a5c29ed39730a1b7396227d09e6.jpg" alt="Header image">
 </div>
 
 <main class="container">
+
   <h1>Welcome</h1>
 
   <p>
@@ -108,6 +115,7 @@
     1096 BA Amsterdam<br>
     The Netherlands
   </p>
+
   <p>
     m.s.pagliari[at]dnb.nl<br>
     pagliari.mariasole[at]gmail.com
@@ -117,6 +125,7 @@
     The views expressed here are my own and do not represent those of
     De Nederlandsche Bank or the ESCB.
   </p>
+
 </main>
 
 </body>
