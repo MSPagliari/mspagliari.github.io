@@ -20,21 +20,24 @@
       background: #ffffff;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
+    /* ===== Header ===== */
     header {
       border-bottom: 1px solid var(--gs-line);
     }
 
     header .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 64px;
+    }
+
+    header strong {
+      font-size: 18px;
+      font-weight: 600;
     }
 
     nav a {
@@ -54,16 +57,44 @@
       padding-bottom: 4px;
     }
 
-    .hero img {
-      width: 100%;
-      max-height: 320px;
+    /* ===== Thin banner ===== */
+    .banner {
+      height: 72px;
+      background-color: var(--gs-blue);
+    }
+
+    /* ===== Main layout ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .intro {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
       object-fit: cover;
-      display: block;
-      margin-bottom: 40px;
+      border-radius: 4px;
+      flex-shrink: 0;
     }
 
     h1, h2 {
       color: var(--gs-blue);
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    ul {
+      margin-left: 20px;
     }
 
     .disclaimer {
@@ -79,25 +110,28 @@
   <div class="container">
     <strong>Maria Sole Pagliari</strong>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="cv.html">Curriculum Vitae</a>
-      <a href="research.html">Research</a>
+      index.htmlHome</a>
+      cv.htmlCurriculum Vitae</a>
+      research.htmlResearch</a>
     </nav>
   </div>
 </header>
 
-<div class="hero">
-  <img src="ba412a5c29ed39730a1b7396227d09e6.jpg" alt="Header image">
-</div>
+<div class="banner"></div>
 
 <main class="container">
 
-  <h1>Welcome</h1>
+  <div class="intro">
+    profile.jpg
 
-  <p>
-    Welcome to my webpage. I am a Senior Economist at De Nederlandsche Bank.
-    I hold a PhD in Economics from Rutgers University.
-  </p>
+    <div>
+      <h1>Welcome</h1>
+      <p>
+        Welcome to my webpage. I am a Senior Economist at De Nederlandsche Bank.
+        I hold a PhD in Economics from Rutgers University.
+      </p>
+    </div>
+  </div>
 
   <h2>Research interests</h2>
   <ul>
