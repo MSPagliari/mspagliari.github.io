@@ -35,13 +35,14 @@
       height: 64px;
     }
 
-    header strong {
-      font-size: 18px;
-      font-weight: 600;
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     nav a {
-      margin-left: 24px;
+      margin-left: 20px;
       text-decoration: none;
       color: var(--gs-muted);
       font-size: 15px;
@@ -57,9 +58,14 @@
       padding-bottom: 4px;
     }
 
+    .dnb-logo {
+      height: 32px;
+      width: auto;
+    }
+
     /* ===== Thin banner ===== */
     .banner {
-      height: 72px;
+      height: 64px;
       background-color: var(--gs-blue);
     }
 
@@ -109,11 +115,17 @@
 <header>
   <div class="container">
     <strong>Maria Sole Pagliari</strong>
-    <nav>
-      index.htmlHome</a>
-      cv.htmlCurriculum Vitae</a>
-      research.htmlResearch</a>
-    </nav>
+
+    <div class="header-right">
+      <nav>
+        Home</a>
+        Curriculum Vitae</a>
+        Research</a>
+      </nav>
+
+      <!-- DNB logo (JPG) -->
+      dnb-logo.jpg
+    </div>
   </div>
 </header>
 
@@ -122,7 +134,7 @@
 <main class="container">
 
   <div class="intro">
-    profile.jpg
+    Pagliari_foto_2.png
 
     <div>
       <h1>Welcome</h1>
