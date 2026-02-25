@@ -4,20 +4,85 @@
   <meta charset="UTF-8">
   <title>Maria Sole Pagliari</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --gs-blue: #1a73e8;
+      --gs-text: #202124;
+      --gs-muted: #5f6368;
+      --gs-line: #e0e0e0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--gs-text);
+      background: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--gs-line);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--gs-muted);
+    }
+
+    nav a.active {
+      color: var(--gs-text);
+      border-bottom: 2px solid var(--gs-blue);
+      padding-bottom: 4px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      margin-bottom: 40px;
+    }
+
+    h1, h2 {
+      color: var(--gs-blue);
+    }
+
+    .disclaimer {
+      font-style: italic;
+      color: var(--gs-muted);
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
+<header>
   <div class="container">
-    <div class="site-title">Maria Sole Pagliari</div>
-    <nav class="site-nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="cv.html">Curriculum Vitae</a>
-      <a href="research.html">Research</a>
+    <strong>Maria Sole Pagliari</strong>
+    <nav>
+      index.htmlHome</a>
+      cv.htmlCurriculum Vitae</a>
+      research.htmlResearch</a>
     </nav>
   </div>
 </header>
+
+<div class="hero">
+  ba412a5c29ed39730a1b7396227d09e6.jpg
+</div>
 
 <main class="container">
   <h1>Welcome</h1>
