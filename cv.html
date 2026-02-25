@@ -6,67 +6,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Georgia", "Times New Roman", serif;
-      color: #202124;
+    :root {
+      --gs-blue: #003A8F;
+      --gs-text: #202124;
+      --gs-muted: #5f6368;
+      --gs-line: #e0e0e0;
     }
 
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--gs-text);
+      background: #ffffff;
+    }
+
+    /* ===== Header ===== */
+    header {
+      border-bottom: 1px solid var(--gs-line);
+    }
+
+    header .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dnb-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .site-name {
+      font-size: 24px;
+      font-weight: normal;
+      color: var(--gs-text);
+    }
+
+    nav a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--gs-muted);
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--gs-text);
+    }
+
+    /* ===== Thin banner ===== */
+    .banner {
+      height: 56px;
+      background-color: var(--gs-blue);
+    }
+
+    /* ===== Main content ===== */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
-    h1, h2 {
-      color: #1a73e8;
+    /* ===== Titles ===== */
+    h1 {
+      color: var(--gs-blue);
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 32px;
     }
 
     h2 {
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 6px;
+      color: var(--gs-blue);              /* section titles in blue */
+      font-weight: normal;
       margin-top: 40px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--gs-line);
+      padding-bottom: 4px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    p {
+      margin-top: 6px;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<header>
+  <div class="container">
+    <div class="header-left">
+      dnb_logo.jpg
+      <span class="site-name">Maria Sole Pagliari</span>
+    </div>
 
-<h1>Curriculum Vitae</h1>
+    <nav>
+      index.htmlHome</a>
+      cv.htmlCurriculum Vitae</a>
+      research.htmlResearch</a>
+    </nav>
+  </div>
+</header>
 
-<p>
-  <em>
-    Full CV (PDF):
-    https://drive.google.com/file/d/1zNXM5aVtsUu3rkv9ExWG8lRtrXHm2UFf/view
-      Download PDF
-    </a>
-  </em>
-</p>
+<div class="banner"></div>
 
-<h2>Education</h2>
-<ul>
-  <li>Ph.D. in Economics, Rutgers University (USA), 2020</li>
-  <li>M.A. in Economics, Rutgers University (USA), 2015</li>
-  <li>M.Sc. in Economics and Social Sciences, Bocconi University (Italy), 2011</li>
-  <li>B.Sc. in Economics and Social Sciences, Bocconi University (Italy), 2009</li>
-</ul>
+<main class="container">
 
-<h2>Positions</h2>
-<ul>
-  <li>Senior Economist, De Nederlandsche Bank</li>
-  <li>Visiting Scholar, University of Amsterdam</li>
-  <li>Research Economist, Banque de France (2020–2023)</li>
-  <li>European Central Bank (2012–2020)</li>
-</ul>
+  <h1>Curriculum Vitae</h1>
 
-<h2>Teaching & Research Experience</h2>
-<ul>
-  <li>Guest Lecturer, Vrije Universiteit Amsterdam</li>
-  <li>Instructor, Université Paris Dauphine‑PSL</li>
-  <li>Research Assistant, Rutgers University</li>
-</ul>
+  <h2>Education</h2>
+  <ul>
+    <li>Ph.D. in Economics, Rutgers University, 2020</li>
+    <li>M.A. in Economics, Rutgers University, 2015</li>
+    <li>M.Sc. in Economics and Social Sciences, Bocconi University, 2011</li>
+    <li>B.Sc. in Economics and Social Sciences, Bocconi University, 2009</li>
+  </ul>
 
-</div>
+  <h2>Current Positions</h2>
+  <ul>
+    <li>Senior Economist, Monetary Policy Department, De Nederlandsche Bank</li>
+    <li>Visiting Scholar, University of Amsterdam</li>
+  </ul>
+
+  <h2>Past Positions</h2>
+  <ul>
+    <li>Research Economist, Banque de France (2020–2023)</li>
+    <li>European Central Bank (Graduate Programme, PhD Trainee, Research Analyst)</li>
+    <li>International Monetary Fund, Fund Internship Program</li>
+  </ul>
+
+  <h2>Teaching & Research Experience</h2>
+  <ul>
+    <li>Instructor, Macroeconometrics, Université Paris Dauphine‑PSL</li>
+    <li>Guest Lecturer, Vrije Universiteit Amsterdam</li>
+    <li>Research Assistant, Rutgers University</li>
+  </ul>
+
+</main>
+
 </body>
 </html>
