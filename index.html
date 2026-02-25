@@ -7,7 +7,7 @@
 
   <style>
     :root {
-      --gs-blue: #000066;
+      --gs-blue: #003A8F;   /* closer to DNB blue */
       --gs-text: #202124;
       --gs-muted: #5f6368;
       --gs-line: #e0e0e0;
@@ -48,7 +48,7 @@
 
     .site-name {
       font-size: 24px;
-      font-weight: normal; /* NOT bold */
+      font-weight: normal;
       color: var(--gs-text);
     }
 
@@ -87,7 +87,14 @@
     .profile-pic {
       width: 100%;
       height: auto;
-      margin-bottom: 32px;
+      margin-bottom: 12px;
+    }
+
+    .disclaimer-left {
+      font-style: italic;
+      color: var(--gs-muted);
+      font-size: 13px;
+      margin: 4px 0 20px 0;
     }
 
     .contact {
@@ -111,15 +118,21 @@
       margin-top: 0;
     }
 
+    h2.research-interests {
+      margin-top: 48px; /* push section further down */
+    }
+
     ul {
       margin-left: 20px;
     }
 
-    .disclaimer {
-      font-style: italic;
-      color: var(--gs-muted);
-      margin-top: 40px;
-      font-size: 13px;
+    a.inline-link {
+      color: var(--gs-blue);
+      text-decoration: none;
+    }
+
+    a.inline-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -149,14 +162,16 @@
     <!-- LEFT COLUMN -->
     <div>
       <img src="Pagliari_foto_2.png" alt="Profile picture" class="profile-pic">
-        <p class="disclaimer">
+
+      <p class="disclaimer-left">
         The views expressed here are my own and do not represent those of
         De Nederlandsche Bank or the ESCB.
-        </p>
+      </p>
+
       <div class="contact">
         <h3>Contact information</h3>
         <p>
-          De Nederlandsche Bank<br>
+          <a href="https://www.dnb.nl" class="inline-link">De Nederlandsche Bank</a><br>
           Spaklerweg 4<br>
           1096 BA Amsterdam<br>
           The Netherlands
@@ -172,11 +187,13 @@
     <div>
       <h1>Welcome</h1>
       <p>
-        Welcome to my webpage. I am a Senior Economist at De Nederlandsche Bank.
-        I hold a PhD in Economics from Rutgers University.
+        Welcome to my webpage. I am a Senior Economist at
+        <a href="https://www.dnb.nl" class="inline-link">De Nederlandsche Bank</a>.
+        I hold a PhD in Economics from
+        <a href="https://www.rutgers.edu" class="inline-link">Rutgers University</a>.
       </p>
 
-      <h2>Research interests</h2>
+      <h2 class="research-interests">Research interests</h2>
       <ul>
         <li>Bayesian VARs and DSGE models</li>
         <li>Monetary policy and macro‑financial transmission</li>
@@ -184,7 +201,6 @@
         <li>Climate‑related macro‑financial risks</li>
         <li>International finance</li>
       </ul>
-
     </div>
 
   </div>
