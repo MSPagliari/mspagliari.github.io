@@ -26,23 +26,34 @@
     }
 
     header .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 72px;
     }
 
-    .header-right {
+    .header-left {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
+    }
+
+    .dnb-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .site-name {
+      font-size: 24px;
+      font-weight: normal; /* NOT bold */
+      color: var(--gs-text);
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 28px;
       text-decoration: none;
       color: var(--gs-muted);
       font-size: 15px;
@@ -50,11 +61,6 @@
 
     nav a:hover {
       color: var(--gs-text);
-    }
-
-    .dnb-logo {
-      height: 32px;
-      width: auto;
     }
 
     /* ===== Thin banner ===== */
@@ -65,28 +71,40 @@
 
     /* ===== Main layout ===== */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
-    .intro {
-      display: flex;
-      align-items: flex-start;
-      gap: 32px;
+    .main-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ===== Left column ===== */
+    .profile-pic {
+      width: 100%;
+      height: auto;
       margin-bottom: 32px;
     }
 
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 4px;
-      flex-shrink: 0;
+    .contact {
+      font-size: 14px;
     }
 
+    .contact h3 {
+      color: var(--gs-blue);
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    /* ===== Right column ===== */
     h1, h2 {
       color: var(--gs-blue);
+      font-weight: normal;
     }
 
     h1 {
@@ -101,6 +119,7 @@
       font-style: italic;
       color: var(--gs-muted);
       margin-top: 40px;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -108,18 +127,16 @@
 
 <header>
   <div class="container">
-    <strong>Maria Sole Pagliari</strong>
-
-    <div class="header-right">
-      <nav>
-        Home</a>
-        Curriculum Vitae</a>
-        Research</a>
-      </nav>
-
-      <!-- DNB logo (JPG) -->
-      <img src="dnb_logo.jpg" alt="De Nederlandsche Bank logo" class="dnb-logo">
+    <div class="header-left">
+      <img src="dnb_logo.jpg" alt="DNB logo" class="dnb-logo">
+      <span class="site-name">Maria Sole Pagliari</span>
     </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cv.html">Curriculum Vitae</a>
+      <a href="research.html">Research</a>
+    </nav>
   </div>
 </header>
 
@@ -127,45 +144,50 @@
 
 <main class="container">
 
-  <div class="intro">
-    <!-- Personal photo (PNG) -->
-    <img src="Pagliari_foto_2.png" alt="Personal photo" class="profile-pic">
+  <div class="main-grid">
 
+    <!-- LEFT COLUMN -->
+    <div>
+      <img src="Pagliari_foto_2.png" alt="Profile picture" class="profile-pic">
+        <p class="disclaimer">
+        The views expressed here are my own and do not represent those of
+        De Nederlandsche Bank or the ESCB.
+        </p>
+      <div class="contact">
+        <h3>Contact information</h3>
+        <p>
+          De Nederlandsche Bank<br>
+          Spaklerweg 4<br>
+          1096 BA Amsterdam<br>
+          The Netherlands
+        </p>
+        <p>
+          m.s.pagliari[at]dnb.nl<br>
+          pagliari.mariasole[at]gmail.com
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
     <div>
       <h1>Welcome</h1>
       <p>
         Welcome to my webpage. I am a Senior Economist at De Nederlandsche Bank.
         I hold a PhD in Economics from Rutgers University.
       </p>
+
+      <h2>Research interests</h2>
+      <ul>
+        <li>Bayesian VARs and DSGE models</li>
+        <li>Monetary policy and macro‑financial transmission</li>
+        <li>Yield curve dynamics and term premia</li>
+        <li>Climate‑related macro‑financial risks</li>
+        <li>International finance</li>
+      </ul>
+
     </div>
+
   </div>
-
-  <h2>Research interests</h2>
-  <ul>
-    <li>Bayesian VARs and DSGE models</li>
-    <li>Monetary policy and macro‑financial transmission</li>
-    <li>Yield curve dynamics and term premia</li>
-    <li>Climate‑related macro‑financial risks</li>
-    <li>International finance</li>
-  </ul>
-
-  <h2>Contact information</h2>
-  <p>
-    De Nederlandsche Bank<br>
-    Spaklerweg 4<br>
-    1096 BA Amsterdam<br>
-    The Netherlands
-  </p>
-
-  <p>
-    m.s.pagliari[at]dnb.nl<br>
-    pagliari.mariasole[at]gmail.com
-  </p>
-
-  <p class="disclaimer">
-    The views expressed here are my own and do not represent those of
-    De Nederlandsche Bank or the ESCB.
-  </p>
 
 </main>
 
