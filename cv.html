@@ -66,6 +66,16 @@
       white-space: nowrap;
     }
 
+    .site-name a {
+     color: inherit;          /* inherit text color from .site-name */
+     text-decoration: none;   /* remove underline */
+    }
+
+    .site-name a:hover {
+     text-decoration: none;   /* keep no underline on hover */
+     color: inherit;          /* prevent hover color change */
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -204,12 +214,12 @@
   <div class="container">
     <div class="header-left">
       <img src="dnb_logo.jpg" alt="DNB logo" class="dnb-logo">
-      <span class="site-name">Maria Sole Pagliari</span>
+      <span class="site-name"><a href="index.html">Maria Sole Pagliari</a></span>
     </div>
 
     <!-- ✅ Correct anchors (this fixes the “cv.htmlCurriculum Vitae” issue) -->
     <nav>
-      <a href="index.html">Home</a>
+      <!-- <a href="index.html">Home</a> -->
       <a href="cv.html">Curriculum Vitae</a>
       <a href="research.html">Research</a>
     </nav>
