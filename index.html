@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Maria Sole Pagliari</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Keep ONE viewport meta tag (duplicate removed) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     :root {
@@ -13,12 +15,16 @@
       --gs-line: #e0e0e0;
     }
 
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
       color: var(--gs-text);
       background: #ffffff;
       font-size: 18px;
+      line-height: 1.5;
+      overflow-x: hidden;
     }
 
     /* ===== Header ===== */
@@ -33,31 +39,45 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      gap: 16px;
+      min-height: 72px;     /* allow wrapping without overflow */
+      height: auto;         /* avoid fixed height on mobile */
+      flex-wrap: wrap;      /* allow header content to wrap */
     }
 
     .header-left {
       display: flex;
       align-items: center;
       gap: 16px;
+      min-width: 0;         /* allows text to wrap instead of overflow */
     }
 
     .dnb-logo {
       height: 36px;
       width: auto;
+      flex: 0 0 auto;
     }
 
     .site-name {
       font-size: 24px;
       font-weight: normal;
       color: var(--gs-text);
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;      /* links wrap on smaller widths */
+      gap: 16px;
+      justify-content: flex-end;
     }
 
     nav a {
-      margin-left: 28px;
+      margin-left: 0;       /* replaced by gap */
       text-decoration: none;
       color: var(--gs-muted);
       font-size: 24px;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -89,6 +109,7 @@
       width: 100%;
       height: auto;
       margin-bottom: 12px;
+      display: block;
     }
 
     .disclaimer-left {
@@ -120,7 +141,7 @@
     }
 
     h2.research-interests {
-      margin-top: 48px; /* push section further down */
+      margin-top: 48px; /* push section further down (desktop) */
     }
 
     ul {
@@ -141,10 +162,71 @@
     a.inline-link:hover {
       text-decoration: underline;
     }
-  </style>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* Replace the invalid <div style="height:10px;"> inside <p> */
+    .spacer-10 { height: 10px; }
+
+    /* =========================
+       ✅ Responsive adjustments
+       ========================= */
+
+    /* Tablet and below */
+    @media (max-width: 900px) {
+      .main-grid {
+        grid-template-columns: 240px 1fr;
+        gap: 32px;
+      }
+
+      nav a {
+        font-size: 20px;
+      }
+    }
+
+    /* Phone */
+    @media (max-width: 700px) {
+      /* Stack header: brand then nav */
+      header .container {
+        padding: 12px 16px;
+        justify-content: flex-start;
+      }
+
+      .site-name {
+        font-size: 20px;
+        white-space: normal;   /* allow wrapping on small screens */
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      nav a {
+        font-size: 18px;
+      }
+
+      /* Stack columns: photo/contact above text */
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      /* Reduce vertical spacing so content fits nicely */
+      .container {
+        padding: 24px 16px;
+      }
+
+      h2.research-interests {
+        margin-top: 28px; /* less push-down on mobile */
+      }
+
+      body {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
@@ -165,7 +247,6 @@
 <div class="banner"></div>
 
 <main class="container">
-
   <div class="main-grid">
 
     <!-- LEFT COLUMN -->
@@ -195,11 +276,13 @@
     <!-- RIGHT COLUMN -->
     <div>
       <h1>Home Page</h1>
+
+      <p>Welcome to my Webpage!</p>
+      <div class="spacer-10"></div>
+
       <p>
-        Welcome to my Webpage! <br> 
-        <div style="height: 10px;"></div>
         I am a Senior Economist at
-        <a href="https://www.dnb.nl" class="inline-link">De Nederlandsche Bank</a>. <br>
+        <a href="https://www.dnb.nl" class="inline-link">De Nederlandsche Bank</a>.<br>
         I hold a PhD in Economics from
         <a href="https://www.rutgers.edu" class="inline-link">Rutgers University</a>.
       </p>
@@ -215,7 +298,6 @@
     </div>
 
   </div>
-
 </main>
 
 </body>
