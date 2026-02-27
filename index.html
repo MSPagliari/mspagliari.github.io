@@ -65,6 +65,16 @@
       white-space: nowrap;
     }
 
+    .site-name a {
+     color: inherit;          /* inherit text color from .site-name */
+     text-decoration: none;   /* remove underline */
+    }
+
+    .site-name a:hover {
+     text-decoration: none;   /* keep no underline on hover */
+     color: inherit;          /* prevent hover color change */
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;      /* links wrap on smaller widths */
