@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Curriculum Vitae – Maria Sole Pagliari</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✅ Keep ONE viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     :root {
@@ -13,12 +15,16 @@
       --gs-line: #e0e0e0;
     }
 
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
       color: var(--gs-text);
       background: #ffffff;
       font-size: 18px;
+      line-height: 1.5;
+      overflow-x: hidden;
     }
 
     /* ===== Header ===== */
@@ -33,31 +39,45 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      gap: 16px;
+      min-height: 72px;   /* allow wrapping */
+      height: auto;
+      flex-wrap: wrap;
     }
 
     .header-left {
       display: flex;
       align-items: center;
       gap: 16px;
+      min-width: 0;
     }
 
     .dnb-logo {
       height: 36px;
       width: auto;
+      flex: 0 0 auto;
     }
 
     .site-name {
       font-size: 24px;
       font-weight: normal;
       color: var(--gs-text);
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
     }
 
     nav a {
-      margin-left: 28px;
+      margin-left: 0;
       text-decoration: none;
       color: var(--gs-muted);
       font-size: 24px;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -86,7 +106,7 @@
     }
 
     h2 {
-      color: var(--gs-blue);              /* section titles in blue */
+      color: var(--gs-blue);
       font-weight: normal;
       font-size: 22px;
       margin-top: 28px;
@@ -96,45 +116,96 @@
     }
 
     h3 {
-      color: var(--gs-blue);              /* section titles in blue */
+      color: var(--gs-blue);
       font-weight: normal;
       font-size: 20px;
       margin-top: 5px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       padding-bottom: 4px;
     }
 
     ul {
       margin-left: 10px;
       margin-top: 8px;
-      list-style-type: square;   /* square bullets */
+      list-style-type: square;
     }
 
     li::marker {
-      color: var(--gs-blue);     /* blue bullets */
+      color: var(--gs-blue);
     }
-
 
     p {
       margin-top: 6px;
     }
+
+    /* =========================
+       ✅ Responsive adjustments
+       ========================= */
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      nav a {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      h3 {
+        font-size: 19px;
+      }
+    }
+
+    /* Phone */
+    @media (max-width: 700px) {
+      header .container {
+        padding: 12px 16px;
+        justify-content: flex-start;
+      }
+
+      .site-name {
+        font-size: 20px;
+        white-space: normal;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      nav a {
+        font-size: 18px;
+      }
+
+      .container {
+        padding: 24px 16px;
+      }
+
+      body {
+        font-size: 17px;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        margin-top: 22px;
+      }
+    }
   </style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
+
 <body>
 
 <header>
   <div class="container">
     <div class="header-left">
       <img src="dnb_logo.jpg" alt="DNB logo" class="dnb-logo">
-      <span class="site-name">Maria Sole Pagliari</span>
-    </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cv.html">Curriculum Vitae</a>
+      <span class="site-name">Maria Sole Pagliari</span</a>
+      cv.htmlCurriculum Vitae</a>
       <a href="research.html">Research</a>
     </nav>
   </div>
@@ -153,8 +224,9 @@
     <li><strong>December 2011:</strong> <em>M.Sc. in Economics and Social Sciences</em>, Bocconi University, Milan, Italy</li>
     <li><strong>October 2009:</strong> <em>B.Sc. in Economics and Social Sciences</em>, Bocconi University, Milan, Italy</li>
   </ul>
-  
+
   <h2>Working Experience</h2>
+
   <h3>Current Positions</h3>
   <ul>
     <li><em>Senior Economist</em>, De Nederlandsche Bank, Economics and Research, Monetary Policy Department</li>
@@ -164,35 +236,35 @@
   <h3>Past Positions</h3>
   <ul>
     <li><strong>September 2020 – September 2023:</strong> <em>Research Economist</em>, Banque de France, DGSEI / DEMFI‑POMONE</li>
-    <li><strong>September 2018 – August 2020:</strong> <em>Graduate programme participant</em>, European Central Bank, DG‑International and European Relations & DG‑Micro‑Supervision III</li>
-    <li><strong>May 2018 – August 2018:</strong> <em>PhD Traineeship</em>, European Central Bank, DG‑Economic Developments</li>
-    <li><strong>June 2016 – August 2016:</strong> <em>Fund Internship Program</em>, International Monetary Fund, Strategy and Policy Review Department</li>
-    <li><strong>January 2013 – June 2013:</strong> <em>Research Analyst</em>, European Central Bank, DG‑International and European Relations</li>
-    <li><strong>February 2012 – December 2012:</strong> <em>Traineeship</em>, European Central Bank, DG‑Market Operations & DG‑International and European Relations</li>
+    <li><strong>September 2018 – August 2020:</strong> <em>Graduate programme participant</em>, European Central Bank</li>
+    <li><strong>May 2018 – August 2018:</strong> <em>PhD Traineeship</em>, European Central Bank</li>
+    <li><strong>June 2016 – August 2016:</strong> <em>Fund Internship Program</em>, International Monetary Fund</li>
+    <li><strong>January 2013 – June 2013:</strong> <em>Research Analyst</em>, European Central Bank</li>
+    <li><strong>February 2012 – December 2012:</strong> <em>Traineeship</em>, European Central Bank</li>
   </ul>
 
   <h2>Teaching & Research Experience</h2>
   <ul>
-<li><strong>November 2023, 2025:</strong> <em>Guest lecturer</em>, Vrije Universiteit</li>
-  <li><strong>September 2022 – January 2023:</strong> <em>Instructor (enseignant vacataire)</em> for the course of <em>Macroeconometrics (M1)</em>, Université Paris Dauphine‑PSL</li>
-  <li><strong>January 2022:</strong> <em>Instructor</em> for the IBFI seminar on <em>New Keynesian DSGE models</em>, Banque de France</li>
-  <li><strong>October 2021:</strong> <em>Instructor</em> for the IBFI seminar on <em>DSGE models with financial frictions</em>, Banque de France</li>
-  <li><strong>February 2015 – July 2018:</strong> <em>Research Assistant</em> for Prof. Michael Bordo, Rutgers University, Economics Department</li>
-  <li><strong>September 2017 – May 2018:</strong> <em>Teaching Associate</em>, Rutgers University, English Department</li>
-  <li><strong>May 2015 – July 2015:</strong> <em>Instructor</em>, Rutgers University, Economics Department</li>
-  <li><strong>September 2014 – May 2017:</strong> <em>Teaching Assistant</em>, Rutgers University, Economics Department</li>
+    <li><strong>November 2023, 2025:</strong> <em>Guest lecturer</em>, Vrije Universiteit</li>
+    <li><strong>September 2022 – January 2023:</strong> <em>Instructor</em>, Université Paris Dauphine‑PSL</li>
+    <li><strong>January 2022:</strong> <em>Instructor</em>, Banque de France</li>
+    <li><strong>October 2021:</strong> <em>Instructor</em>, Banque de France</li>
+    <li><strong>February 2015 – July 2018:</strong> <em>Research Assistant</em>, Rutgers University</li>
+    <li><strong>September 2017 – May 2018:</strong> <em>Teaching Associate</em>, Rutgers University</li>
+    <li><strong>May 2015 – July 2015:</strong> <em>Instructor</em>, Rutgers University</li>
+    <li><strong>September 2014 – May 2017:</strong> <em>Teaching Assistant</em>, Rutgers University</li>
   </ul>
 
-  
-<p style="margin-top: 32px; font-style: italic;">
-  You can find my full CV
-  <a href="https://mspagliari.github.io/CV/pdf/CV_MSP.pdf"
-     style="color: var(--gs-blue); text-decoration: none;"
-     target="_blank">
-    here
-  </a>.
-</p>
+  <p style="margin-top: 32px; font-style: italic;">
+    You can find my full CV
+    <a href="https://mspagliari.github.io/CV/pdf/CV_MSP.pdf"
+       style="color: var(--gs-blue); text-decoration: none;"
+       target="_blank">
+      here
+    </a>.
+  </p>
 
 </main>
+
 </body>
 </html>
