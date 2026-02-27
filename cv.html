@@ -40,9 +40,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      min-height: 72px;   /* allow wrapping */
-      height: auto;
-      flex-wrap: wrap;
+      min-height: 72px;     /* allow wrapping on smaller screens */
+      height: auto;         /* avoid fixed height */
+      flex-wrap: wrap;      /* allow wrap instead of squeezing */
     }
 
     .header-left {
@@ -55,6 +55,7 @@
     .dnb-logo {
       height: 36px;
       width: auto;
+      display: block;
       flex: 0 0 auto;
     }
 
@@ -73,7 +74,6 @@
     }
 
     nav a {
-      margin-left: 0;
       text-decoration: none;
       color: var(--gs-muted);
       font-size: 24px;
@@ -127,37 +127,37 @@
     ul {
       margin-left: 10px;
       margin-top: 8px;
-      list-style-type: square;
+      list-style-type: square;   /* square bullets */
     }
 
     li::marker {
-      color: var(--gs-blue);
+      color: var(--gs-blue);     /* blue bullets */
     }
 
     p {
       margin-top: 6px;
     }
 
+    /* ===== Link in paragraph at bottom ===== */
+    .cv-link a {
+      color: var(--gs-blue);
+      text-decoration: none;
+    }
+
+    .cv-link a:hover {
+      text-decoration: underline;
+    }
+
     /* =========================
        ✅ Responsive adjustments
        ========================= */
 
-    /* Tablet */
     @media (max-width: 900px) {
-      nav a {
-        font-size: 20px;
-      }
-
-      h2 {
-        font-size: 21px;
-      }
-
-      h3 {
-        font-size: 19px;
-      }
+      nav a { font-size: 20px; }
+      h2 { font-size: 21px; }
+      h3 { font-size: 19px; }
     }
 
-    /* Phone */
     @media (max-width: 700px) {
       header .container {
         padding: 12px 16px;
@@ -166,7 +166,7 @@
 
       .site-name {
         font-size: 20px;
-        white-space: normal;
+        white-space: normal; /* allow wrapping */
       }
 
       nav {
@@ -204,8 +204,13 @@
   <div class="container">
     <div class="header-left">
       <img src="dnb_logo.jpg" alt="DNB logo" class="dnb-logo">
-      <span class="site-name">Maria Sole Pagliari</span</a>
-      cv.htmlCurriculum Vitae</a>
+      <span class="site-name">Maria Sole Pagliari</span>
+    </div>
+
+    <!-- ✅ Correct anchors (this fixes the “cv.htmlCurriculum Vitae” issue) -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cv.html">Curriculum Vitae</a>
       <a href="research.html">Research</a>
     </nav>
   </div>
@@ -236,32 +241,28 @@
   <h3>Past Positions</h3>
   <ul>
     <li><strong>September 2020 – September 2023:</strong> <em>Research Economist</em>, Banque de France, DGSEI / DEMFI‑POMONE</li>
-    <li><strong>September 2018 – August 2020:</strong> <em>Graduate programme participant</em>, European Central Bank</li>
-    <li><strong>May 2018 – August 2018:</strong> <em>PhD Traineeship</em>, European Central Bank</li>
-    <li><strong>June 2016 – August 2016:</strong> <em>Fund Internship Program</em>, International Monetary Fund</li>
-    <li><strong>January 2013 – June 2013:</strong> <em>Research Analyst</em>, European Central Bank</li>
-    <li><strong>February 2012 – December 2012:</strong> <em>Traineeship</em>, European Central Bank</li>
+    <li><strong>September 2018 – August 2020:</strong>onal and European Relations &amp; DG‑Micro‑Supervision III</li>
+    <li><strong>May 2018 – August 2018:</strong> <em>PhD Traineeship</em>, European Central Bank, DG‑Economic Developments</li>
+    <li><strong>June 2016 – August 2016:</strong> <em>Fund Internship Program</em>, International Monetary Fund, Strategy and Policy Review Department</li>
+    <li><strong>January 2013 – June 2013:</strong> <em>Research Analyst</em>, European Central Bank, DG‑International and European Relations</li>
+    <li><strong>February 2012 – December 2012:</strong> <em>Traineeship</em>, European Central Bank, DG‑Market Operations &amp; DG‑International and European Relations</li>
   </ul>
 
-  <h2>Teaching & Research Experience</h2>
+  <h2>Teaching &amp; Research Experience</h2>
   <ul>
     <li><strong>November 2023, 2025:</strong> <em>Guest lecturer</em>, Vrije Universiteit</li>
-    <li><strong>September 2022 – January 2023:</strong> <em>Instructor</em>, Université Paris Dauphine‑PSL</li>
-    <li><strong>January 2022:</strong> <em>Instructor</em>, Banque de France</li>
-    <li><strong>October 2021:</strong> <em>Instructor</em>, Banque de France</li>
-    <li><strong>February 2015 – July 2018:</strong> <em>Research Assistant</em>, Rutgers University</li>
-    <li><strong>September 2017 – May 2018:</strong> <em>Teaching Associate</em>, Rutgers University</li>
-    <li><strong>May 2015 – July 2015:</strong> <em>Instructor</em>, Rutgers University</li>
-    <li><strong>September 2014 – May 2017:</strong> <em>Teaching Assistant</em>, Rutgers University</li>
+    <li><strong>September 2022 – January 2023:</strong> <em>Instructor (enseignant vacataire)</em> for the course of <em>Macroeconometrics (M1)</em>, Université Paris Dauphine‑PSL</li>
+    <li><strong>January 2022:</strong> <em>Instructor</em> for the IBFI seminar on <em>New Keynesian DSGE models</em>, Banque de France</li>
+    <li><strong>October 2021:</strong> <em>Instructor</em> for the IBFI seminar on <em>DSGE models with financial frictions</em>, Banque de France</li>
+    <li><strong>February 2015 – July 2018:</strong> <em>Research Assistant</em> for Prof. Michael Bordo, Rutgers University, Economics Department</li>
+    <li><strong>September 2017 – May 2018:</strong> <em>Teaching Associate</em>, Rutgers University, English Department</li>
+    <li><strong>May 2015 – July 2015:</strong> <em>Instructor</em>, Rutgers University, Economics Department</li>
+    <li><strong>September 2014 – May 2017:</strong> <em>Teaching Assistant</em>, Rutgers University, Economics Department</li>
   </ul>
 
-  <p style="margin-top: 32px; font-style: italic;">
+  <p class="cv-link" style="margin-top: 32px; font-style: italic;">
     You can find my full CV
-    <a href="https://mspagliari.github.io/CV/pdf/CV_MSP.pdf"
-       style="color: var(--gs-blue); text-decoration: none;"
-       target="_blank">
-      here
-    </a>.
+    https://mspagliari.github.io/CV/pdf/CV_MSP.pdfhere</a>.
   </p>
 
 </main>
